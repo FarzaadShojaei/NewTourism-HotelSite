@@ -1,0 +1,261 @@
+:root {
+  --te-color-primary: #ff6b35;
+  --te-color-primary-soft: #ffe1d2;
+  --te-color-bg: #050816;
+  --te-color-surface: #111827;
+  --te-color-surface-soft: #1f2937;
+  --te-color-text-main: #f9fafb;
+  --te-color-text-muted: #9ca3af;
+  --te-radius-lg: 18px;
+  --te-radius-md: 12px;
+  --te-radius-pill: 999px;
+  --te-shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
+  --te-transition-fast: 0.18s ease-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background: radial-gradient(circle at top, #1d283a 0, #020617 55%, #000 100%);
+  color: var(--te-color-text-main);
+}
+
+.te-app-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.te-page {
+  width: 100%;
+  max-width: 1120px;
+  background: radial-gradient(circle at top left, #111827 0, #020617 55%);
+  border-radius: 32px;
+  box-shadow: var(--te-shadow-soft);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  padding: 32px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.te-hero {
+  border-radius: 28px;
+  padding: 26px 24px 28px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(248, 250, 252, 0.06),
+      rgba(15, 23, 42, 0.2)
+    );
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.te-hero::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(251, 191, 36, 0.18), transparent),
+    radial-gradient(circle at 80% 0%, rgba(248, 113, 113, 0.26), transparent),
+    radial-gradient(circle at 0% 70%, rgba(56, 189, 248, 0.22), transparent);
+  opacity: 0.75;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.te-heading {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2rem, 2.4vw + 1.4rem, 2.8rem);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.te-subtitle {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 540px;
+  color: var(--te-color-text-muted);
+  font-size: 0.98rem;
+}
+
+.te-btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: var(--te-radius-pill);
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform var(--te-transition-fast),
+    box-shadow var(--te-transition-fast),
+    border-color var(--te-transition-fast),
+    background-color var(--te-transition-fast),
+    color var(--te-transition-fast);
+}
+
+.te-btn--primary {
+  background: linear-gradient(135deg, #f97316, #facc15);
+  color: #111827;
+  box-shadow: 0 14px 28px rgba(248, 113, 22, 0.65);
+}
+
+.te-btn--primary:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 18px 38px rgba(248, 113, 22, 0.75);
+}
+
+.te-btn--ghost {
+  background: rgba(15, 23, 42, 0.75);
+  color: var(--te-color-text-main);
+  border-color: rgba(148, 163, 184, 0.55);
+}
+
+.te-btn--ghost:hover {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(248, 250, 252, 0.7);
+}
+
+.te-btn--outline {
+  background: transparent;
+  color: var(--te-color-primary);
+  border-color: rgba(248, 113, 22, 0.75);
+}
+
+.te-btn--outline:hover {
+  background: rgba(248, 113, 22, 0.08);
+  box-shadow: 0 10px 20px rgba(248, 113, 22, 0.35);
+}
+
+.te-section {
+  border-radius: 22px;
+  padding: 18px 18px 20px;
+  background: radial-gradient(circle at top, #020617 0, #020617 50%, #020617);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+.te-section-title {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e5e7eb;
+}
+
+.te-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.te-card {
+  border-radius: 18px;
+  background: radial-gradient(circle at top, #111827 0, #020617 60%);
+  border: 1px solid rgba(75, 85, 99, 0.9);
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.te-card-title {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.te-card-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--te-color-text-muted);
+}
+
+.te-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.te-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.te-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.te-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.te-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--te-color-text-muted);
+}
+
+.te-input {
+  border-radius: 12px;
+  border: 1px solid rgba(75, 85, 99, 0.8);
+  padding: 8px 10px;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--te-color-text-main);
+  font-size: 0.9rem;
+}
+
+.te-input:focus {
+  outline: none;
+  border-color: rgba(248, 113, 22, 0.85);
+  box-shadow: 0 0 0 1px rgba(248, 113, 22, 0.85);
+}
+
+.te-contact-line {
+  margin: 2px 0;
+  font-size: 0.93rem;
+}
+
+@media (max-width: 768px) {
+  .te-app-shell {
+    padding: 16px 10px;
+  }
+
+  .te-page {
+    padding: 20px 14px 16px;
+    border-radius: 24px;
+  }
+
+  .te-hero {
+    padding: 18px 14px 18px;
+  }
+}
+
+
